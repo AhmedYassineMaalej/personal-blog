@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "title": "How I made my own markdown parser with Rust!",
+    "tags": [
+      "rust",
+      "nom",
+      "parsing"
+    ],
+    "readtime": "30 min",
+    "date": "10 April 2025",
+    "thumbnail": "thumbnail1.png"
+  },
+  "content": {
+    "intro": [
+      {
+        "type": "Normal",
+        "text": "In this short tutorial we'll be going through how I made my own basic markdown parser in rust using the "
+      },
+      {
+        "type": "Url",
+        "display": "nom",
+        "url": "https://docs.rs/nom/latest/nom/index.html"
+      },
+      {
+        "type": "Normal",
+        "text": " crate"
+      }
+    ],
+    "body": [
+      {
+        "type": "Title",
+        "level": 1,
+        "text": "The Problem"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "In the journey of making this blog website, I had to decide on the format in which I want to write the articles. Since writing the article using react components seems cumbersome and unergonomic, I decided to write the write the articles in markdown (which I am much more comfortable with thanks to "
+          },
+          {
+            "type": "Url",
+            "display": "obsidian",
+            "url": "https://obsidian.md/"
+          },
+          {
+            "type": "Normal",
+            "text": ")."
+          }
+        ]
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Instead of choosing one of the dozen available "
+          },
+          {
+            "type": "Url",
+            "display": "frameworks",
+            "url": "https://jamstack.org/generators/"
+          },
+          {
+            "type": "Normal",
+            "text": " that automatically generate your website from "
+          },
+          {
+            "type": "Code",
+            "code": ".md"
+          },
+          {
+            "type": "Normal",
+            "text": " files, I decided that it would be a fun challenge to write my own basic markdown parser, load into well defined rust types, serialize the objects into "
+          },
+          {
+            "type": "Code",
+            "code": ".json"
+          },
+          {
+            "type": "Normal",
+            "text": " files and finally use them for the static page generation."
+          }
+        ]
+      },
+      {
+        "type": "Title",
+        "level": 1,
+        "text": "The Markdown Format to Parse"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "My general markdown file is split into 2 parts. First, at the top of the file is metadata about the article"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "md",
+        "code": "---\ntags:\n  - \"#tag1\"\n  - \"#tag2\"\ntitle: How to make your own markdown parser with Rust!\nreadtime: 20 min\ndate: 9 May 2025\n---\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "This is followed by the content of the article, which for now can 1 of four types"
+          }
+        ]
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Titles:"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "md",
+        "code": "# Title 1\n## Subtitle 1\n## Subtitle 2\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Code snippets:"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "rust",
+        "code": "fn main() {\n    println!(\"hello world\");\n}\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Images:"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "md",
+        "code": "![image.png]\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "and for my specific needs, everything else would be parsed as a paragraph."
+          }
+        ]
+      },
+      {
+        "type": "Title",
+        "level": 1,
+        "text": "Using nom"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Code",
+            "code": "nom"
+          },
+          {
+            "type": "Normal",
+            "text": "'s approach to parsing is quite straight-forward, you can your use/write two main structures:"
+          }
+        ]
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Parsers will are functions that take input ("
+          },
+          {
+            "type": "Code",
+            "code": "&str"
+          },
+          {
+            "type": "Normal",
+            "text": " in my case) and return matched output as well as the remaining input that was was not matched. Take for example the "
+          },
+          {
+            "type": "Code",
+            "code": "tag"
+          },
+          {
+            "type": "Normal",
+            "text": " parser which just matches a constant string"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "rust",
+        "code": "use nom::bytes::complete::{tag};\n\ntag(\"Hello\").parse(\"Hello World\") // Ok((\"World\", \"Hello\"))\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "nom also allows you to combine these parsers in order to make new more complex parsers. These combinators can be as simple as chaining two parsers together by putting them in a tuple"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "rust",
+        "code": "use nom::bytes::complete::tag;\nuse nom::character::complete::alpha1;\n\n(tag(\"# \"), alpha1).parse(\"# How to center a div\")\n",
+        "copiable": true
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "Yields"
+          }
+        ]
+      },
+      {
+        "type": "Codeblock",
+        "language": "rust",
+        "code": "Ok((\n\t\"to center a div\", // the non-matched remaining input\n\t(\n\t\t\"# \", // what the tag(\"# \") matched\n\t\t\"How\", // what the alpha1 matched\n\t)\n))\n"
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "The "
+          },
+          {
+            "type": "Code",
+            "code": "alpha1"
+          },
+          {
+            "type": "Normal",
+            "text": " parser matches 1 or more ASCII alphabetic characters: a-z, A-Z"
+          }
+        ]
+      },
+      {
+        "type": "Paragraph",
+        "entries": [
+          {
+            "type": "Normal",
+            "text": "We'll be going through quite a few parsers so I'll introduce each one when needed."
+          }
+        ]
+      }
+    ],
+    "outro": [
+      {
+        "type": "Normal",
+        "text": "To be continued..."
+      }
+    ]
+  }
+}

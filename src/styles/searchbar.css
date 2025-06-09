@@ -1,0 +1,10 @@
+input {
+    background-color: #190020;
+    cursor: text;
+    height: 3em;
+    width: 20em;
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-left: max(calc(50% - 20em), 0em);
+    margin-right: max(calc(50% - 20em), 0em);
+}

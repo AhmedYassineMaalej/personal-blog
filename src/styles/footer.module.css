@@ -1,0 +1,11 @@
+.footer {
+    height: 200px;
+    background-color:rgb(24, 0, 24);
+    padding: 1em;
+    align-content: center;
+}
+
+.footer > div > p {
+    text-align: center;
+    font-size: 1.2em;
+}

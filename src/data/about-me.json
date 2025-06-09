@@ -1,0 +1,40 @@
+{
+  "intro": {
+    "greeting": "Hello there!",
+    "bio": "I'm Ahmed Yassine Maalej, a student at INSAT and an aspiring software engineer. I'm passionate about making robust software that is pleasing to work and interact with. Open to talk about anything development related and trash-talk javascript any day of the week :)",
+    "image": "maalej.jpg"
+  },
+  "skills": [
+    {
+      "image": "rust.svg",
+      "description": "Over 4 years of experience with rust and use it as my go to language for my mini-projects. Can code anything ranging from CLI's, TUI's, API's to making python libraries for the speed and memory safety benefits."
+    },
+    {
+      "image": "python.svg",
+      "description": "Over 5 years of experience with python and especially proficient with scientific computing and data analysis (NumPy, SciPy and Matplotlib) as well as the machine learning library PyTorch."
+    },
+    {
+      "image": "typescript.svg",
+      "description": "My go-to language for anything web and front-end related, I mainly use Typescript with NextJS/React as its the golden standard for modern web-dev nowadays."
+    }
+  ],
+  "timeline": {
+    "events": [
+      {
+        "date": "May 2025",
+        "title": "Software Engineering Sector",
+        "description": "After an intense first year in the new university. I successfully qualified to choose software engineering as my field of specialty, fulfilling my long awaited dream."
+      },
+      {
+        "date": "August 2024",
+        "title": "Enrolled at INSAT",
+        "description": "Enrolled at the National Institute of Applied Science and Technology, an engineering school sought after for its Software Engineering program."
+      },
+      {
+        "date": "Juin 2024",
+        "title": "Passed BAC national exam",
+        "description": "Passed the baccalaureate national exam specializing in mathematics with a mention of \"very good\" which allowed to enrol at virtually any university in the country."
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+div.intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 45em);
+  margin: 4em 1em 4em 1em;
+}
+
+div.text {
+  width: 60%;
+}
+
+div.intro > img {
+  width: 40%;
+  border-radius: 1em;
+  margin-left: 4em;
+}
+
+p.greeting {
+  font-size: 2em;
+}
+
+p.bio {
+  font-size: 1.2em;
+}

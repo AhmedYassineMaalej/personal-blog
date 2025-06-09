@@ -1,0 +1,103 @@
+div.body {
+  width: min(100%, 45em);
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3em;
+}
+
+p.title {
+  width: 100%;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+p.paragraph {
+  width: 100%;
+  text-indent: 2em;
+  padding-bottom: 2em;
+}
+
+img.diagram {
+  width: 90%;
+  border-radius: 1em;
+  margin-bottom: 2em;
+}
+
+.codeSnippetContainer {
+  position: relative;
+  width: 90%;
+  height: fit-content;
+  border-radius: 0.5em;
+  background-color: #22272e;
+  margin-bottom: 2em;
+}
+
+.codeCopyButton {
+  font-size: 1em;
+  padding: 0.25em;
+  background-color: black;
+  border-radius: 0.5em;
+  cursor: pointer;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.codeSnippetFooter {
+  height: fit-content;
+  text-align: right;
+}
+
+.codeSnippetFooter > p {
+  padding-right: 1em;
+  padding-top: 0.25em;
+}
+
+.codeBlockContainer {
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.copyButton {
+  position: absolute;
+  right: 0;
+  margin: 0.5em;
+  transition: 0.25s;
+  background-color: black;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  width: 3em;
+  z-index: 1;
+}
+
+.copyButton:hover {
+  width: 4em;
+}
+
+.copyButton.clicked {
+  width: 4em;
+}
+
+.codeBlock {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: fira code;
+  font-size: 0.9em;
+}
+
+.link {
+  text-decoration: underline;
+  color: darkviolet;
+}
+
+.inlineCode {
+  background-color: #22272e;
+  color: darkviolet;
+  border-radius: 0.2em;
+  padding: 0.2em;
+}
+

@@ -1,0 +1,10 @@
+div.container {
+    width: min(100%, 60em);
+    margin-top: 4em;
+}
+
+p.title {
+    width: 100%;
+    font-size: 3em;
+    font-weight: 600;
+}

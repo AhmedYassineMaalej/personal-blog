@@ -1,0 +1,32 @@
+.skill {
+  display: flex;
+  height: 10em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  transition: 1s;
+}
+
+.skill > p {
+  height: 10em;
+  align-content: center;
+  width: 80%;
+  font-size: 1.1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.skill > img {
+  width: 20%;
+}
+
+.skill.invisible {
+  opacity: 0;
+  transform: translateY(20vh);
+}
+
+.skill.visible {
+  opacity: 1;
+  transform: none;
+}

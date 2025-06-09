@@ -1,0 +1,5 @@
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: min(calc(100% - 2em), 50em);
+}

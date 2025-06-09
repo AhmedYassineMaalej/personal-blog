@@ -1,0 +1,131 @@
+div.timelinecontainer {
+  padding: 1em;
+  width: min(100%, 45em);
+}
+
+div.timeline {
+  display: grid;
+  justify-content: left;
+  grid-template-columns: auto auto 1fr;
+  transition: 0.5s;
+}
+
+div.eventcard {
+  height: fit-content;
+  width: fit-content;
+  grid-column: 3;
+  background: linear-gradient(150deg, teal, purple);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin-left: 0.5em;
+  border-radius: 1em;
+  transition: inherit;
+}
+
+div.eventcard:hover {
+  transform: translateY(-1em);
+}
+
+div.eventcard::before {
+  transition: inherit;
+  opacity: 0;
+  content: "";
+  position: fixed;
+  inset: -5px;
+  z-index: -1;
+  background: linear-gradient(150deg, teal, purple);
+  filter: blur(5px);
+  border-radius: 1em;
+}
+
+div.eventcard:hover::before {
+  opacity: 1;
+}
+
+div.circle {
+  grid-column: 2;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: linear-gradient(150deg, teal, purple);
+  margin: 0.5em;
+  transition: inherit;
+}
+
+div.stick {
+  grid-column: 2;
+  width: 1em;
+  height: 10em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background: linear-gradient(150deg, teal, purple);
+  transition: inherit;
+}
+
+p.date {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  align-content: top;
+  text-align: right;
+  grid-column: 1;
+  transition: inherit;
+}
+
+p.eventtitle {
+  font-size: 1.5em;
+}
+
+p.description {
+  display: inline-block;
+  width: fit-content;
+  font-size: 1em;
+  text-indent: 1em;
+}
+
+p.title {
+  text-align: center;
+  font-size: 6em;
+  margin: 0.5em;
+  background-image: linear-gradient(150deg, teal, purple);
+  color: transparent;
+  background-clip: text;
+  transition: ease-out 0.5s;
+}
+
+
+
+.title.invisible {
+  transform: translateY(20vh);
+  opacity: 0;
+}
+
+.title.visible {
+  transform: 0;
+  opacity: 1;
+}
+
+.visible {
+  transform: none;
+  opacity: 1;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.eventcard.invisible {
+  transform: translateY(10vh);
+}
+
+.date.invisible {
+  transform: translateY(10vh);
+}
+
+.circle.invisible {
+  transform: translateY(20vh);
+}
+
+.stick.invisible {
+  transform: translateY(20vh);
+}

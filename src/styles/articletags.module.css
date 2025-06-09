@@ -1,0 +1,13 @@
+div.tags {
+  display: flex;
+  flex-direction: row;
+}
+
+p.tag {
+    background-color: purple;
+    margin: 0.5em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    padding: 0.5em;
+    cursor: pointer;
+}
