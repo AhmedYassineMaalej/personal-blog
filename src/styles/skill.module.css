@@ -1,24 +1,40 @@
 .skill {
   display: flex;
-  height: 10em;
+  height: fit-content;
   width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
   position: relative;
+  align-items: center;
   transition: 1s;
 }
 
+@media screen and (width <= 480px) {
+  .skill {
+    flex-direction: column;
+  }
+
+  .skill > img {
+    width: 40%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (width > 480px) {
+  .skill.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .skill > img {
+    width: 20%;
+  }
+}
+
 .skill > p {
-  height: 10em;
   align-content: center;
-  width: 80%;
   font-size: 1.1em;
   margin-right: 1em;
   margin-left: 1em;
-}
-
-.skill > img {
-  width: 20%;
 }
 
 .skill.invisible {

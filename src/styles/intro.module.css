@@ -1,6 +1,4 @@
 div.intro {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: min(100%, 45em);
@@ -8,17 +6,19 @@ div.intro {
 }
 
 div.text {
-  width: 60%;
+  float: left;
 }
 
 div.intro > img {
+  float: right;
   width: 40%;
   border-radius: 1em;
-  margin-left: 4em;
+  margin-left: 1em;
 }
 
 p.greeting {
   font-size: 2em;
+  padding-bottom: 1em;
 }
 
 p.bio {

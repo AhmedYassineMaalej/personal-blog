@@ -1,6 +1,5 @@
 import { EventData, TimelineData } from "@/pages/about-me";
 import styles from "@/styles/timeline.module.css";
-import { useEffect, useRef, useState } from "react";
 import { useIsVisible } from "../common/useIsVisible";
 
 interface params {
@@ -19,7 +18,7 @@ export default function Timeline({ data }: params) {
   timelineContent.pop();
 
   return (
-    <div className={styles.timelinecontainer}>
+    <div className={styles.timelineContainer}>
       <Title text="TIMELINE" />
       <div className={styles.timeline}>{...timelineContent}</div>
     </div>

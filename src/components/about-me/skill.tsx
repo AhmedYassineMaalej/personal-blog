@@ -8,20 +8,17 @@ interface params {
 }
 
 export default function Skill({ icon, text, index }: params) {
-  const flexDirection = index % 2 == 0 ? "row" : "row-reverse";
+  const directionClass = index % 2 == 0 ? "" : styles.reverse;
   const [isVisible, ref] = useIsVisible();
   const visibilityClass = isVisible ? styles.visible : styles.invisible;
 
   return (
     <div
       ref={ref}
-      className={`${styles.skill} ${visibilityClass}`}
-      style={{
-        flexDirection: flexDirection,
-      }}
+      className={`${styles.skill} ${visibilityClass} ${directionClass}`}
     >
-      <p>{text}</p>
       <img src={icon} />
+      <p>{text}</p>
     </div>
   );
 }

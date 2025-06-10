@@ -1,6 +1,6 @@
-div.timelinecontainer {
-  padding: 1em;
-  width: min(100%, 45em);
+div.timelineContainer {
+  width: min(100%, 50em);
+  padding-bottom: 1em;
 }
 
 div.timeline {
@@ -63,37 +63,44 @@ div.stick {
 }
 
 p.date {
-  width: 100%;
-  height: 100%;
-  font-size: 1.5em;
+  font-size: min(5vw, 1.4em);
   align-content: top;
-  text-align: right;
   grid-column: 1;
   transition: inherit;
 }
 
+@media screen and (width <= 480px) {
+  p.date {
+    width: 15vw;
+    text-align: center;
+  }
+}
+
+@media screen and (width > 480px) {
+  p.date {
+    text-align: right;
+  }
+}
+
 p.eventtitle {
-  font-size: 1.5em;
+  font-size: min(1.5em, 5vw);
 }
 
 p.description {
   display: inline-block;
   width: fit-content;
-  font-size: 1em;
+  font-size: min(1em, 4vw);
   text-indent: 1em;
 }
 
 p.title {
   text-align: center;
-  font-size: 6em;
-  margin: 0.5em;
+  font-size: min(20vw, 6em);
   background-image: linear-gradient(150deg, teal, purple);
   color: transparent;
   background-clip: text;
   transition: ease-out 0.5s;
 }
-
-
 
 .title.invisible {
   transform: translateY(20vh);

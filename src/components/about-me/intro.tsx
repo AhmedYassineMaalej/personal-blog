@@ -9,11 +9,9 @@ interface params {
 export default function Intro({ image, greeting, bio }: params) {
   return (
     <div className={styles.intro}>
-      <div className={styles.text}>
+      <img src={image} />
         <p className={styles.greeting}>{greeting}</p>
         <p className={styles.bio}>{bio}</p>
-      </div>
-      <img src={image} />
     </div>
   );
 }
