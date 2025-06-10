@@ -7,6 +7,12 @@ import "highlight.js/styles/github-dark-dimmed.css";
 import rust from "highlight.js/lib/languages/rust";
 hljs.registerLanguage("rust", rust);
 
+import { Fira_Code } from "next/font/google";
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+});
+
 interface codeSnippetParams {
   code: string;
   language: string;
@@ -36,7 +42,7 @@ export default function CodeSnippet({
   }
 
   return (
-    <div className={styles.codeSnippetContainer}>
+    <div className={`${styles.codeSnippetContainer} ${firaCode.className}`}>
       {copyButton}
       <CodeBlock code={code} language={language} />
       {footer}
