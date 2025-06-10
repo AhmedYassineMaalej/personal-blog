@@ -1,15 +1,13 @@
 import Articles from "@/components/home/articles";
-import Navbar from "@/components/common/navbar";
-import Footer from "@/components/common/footer";
 import fs from "fs";
 import { Metadata } from "../articles/[articleId]";
+import { ReactElement } from "react";
+import Layout from "@/components/common/layout";
 
-export default function Home({ articles }: { articles: Metadata[] }) {
+export default function Page({ articles }: { articles: Metadata[] }) {
   return (
     <div>
-      <Navbar />
       <Articles articles={articles}/>
-      <Footer />
     </div>
   );
 }
@@ -31,3 +29,8 @@ export async function getStaticProps() {
     props: { articles: articles },
   };
 }
+
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};

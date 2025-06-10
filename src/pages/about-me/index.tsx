@@ -1,10 +1,10 @@
 import Intro from "@/components/about-me/intro";
-import Navbar from "@/components/common/navbar";
 import Skills from "@/components/about-me/skills";
-import Footer from "@/components/common/footer";
 import Timeline from "@/components/about-me/timeline";
+import Layout from "@/components/common/layout";
 
 import styles from "@/styles/about.module.css";
+import { ReactElement } from "react";
 
 type Data = {
   intro: IntroData;
@@ -39,27 +39,24 @@ interface params {
 
 export default function AboutMe({ data }: params) {
   return (
-    <div>
-      <Navbar />
-      <div className={styles.about}>
-        <Intro
-          image={data.intro.image}
-          greeting={data.intro.greeting}
-          bio={data.intro.bio}
-        />
-        <Skills data={data.skills} />
-        <Timeline data={data.timeline} />
-      </div>
-      <Footer />
+    <div className={styles.about}>
+      <Intro
+        image={data.intro.image}
+        greeting={data.intro.greeting}
+        bio={data.intro.bio}
+      />
+      <Skills data={data.skills} />
+      <Timeline data={data.timeline} />
     </div>
   );
 }
 
-// This function runs only on the server side
 export async function getStaticProps() {
-  // Instead of fetching your `/api` route you can call the same
-  // function directly in `getStaticProps`
   const data: Data = require("@/data/about-me.json");
 
   return { props: { data } };
 }
+
+AboutMe.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};

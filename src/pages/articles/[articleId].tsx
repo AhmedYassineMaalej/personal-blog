@@ -1,7 +1,6 @@
-import Navbar from "@/components/common/navbar";
-import Footer from "@/components/common/footer";
 import Article from "@/components/article/article";
-import { useRouter } from "next/router";
+import { ReactElement } from "react";
+import Layout from "@/components/common/layout";
 
 export type Data = {
   metadata: Metadata;
@@ -70,14 +69,8 @@ export interface articleProps {
   data: Data;
 }
 
-export default function Home({ data }: articleProps) {
-  return (
-    <div>
-      <Navbar />
-      <Article data={data} />
-      <Footer />
-    </div>
-  );
+export default function Page({ data }: articleProps) {
+  return <Article data={data} />;
 }
 
 // This function runs only on the server side
@@ -97,3 +90,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
