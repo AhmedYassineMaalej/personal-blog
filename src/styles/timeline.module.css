@@ -89,6 +89,7 @@ p.eventtitle {
 p.description {
   display: inline-block;
   width: fit-content;
+  text-wrap: pretty;
   font-size: min(1em, 4vw);
   text-indent: 1em;
 }

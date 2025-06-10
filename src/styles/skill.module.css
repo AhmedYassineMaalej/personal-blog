@@ -32,6 +32,7 @@
 
 .skill > p {
   align-content: center;
+  text-wrap: balance;
   font-size: 1.1em;
   margin-right: 1em;
   margin-left: 1em;
