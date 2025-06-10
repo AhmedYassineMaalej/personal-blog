@@ -1,0 +1,50 @@
+.navbar {
+  transition: top 0.5s;
+  z-index: 2;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  background: #56006e;
+  top: 0px;
+  height: 10%;
+}
+
+.navbar.invisible {
+  top: -100px;
+}
+
+.navbar > button {
+  transition: 0.2s;
+  background-color: #56006e;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.navbar > img {
+  transition: 0.1s;
+  object-fit: cover;
+  width: 3em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.navbar > img:hover {
+  scale: 105%;
+}
+
+.navbar > button:hover {
+  background-color: #60017b;
+}
+
+@media screen and (max-width: 480px) {
+  .navbarButton {
+    display: none;
+  }
+}

@@ -4,7 +4,7 @@ import styles from "@/styles/articleview.module.css";
 
 export default function Articles({ articles }: { articles: Metadata[] }) {
   return (
-    <div className={styles.articleview}>
+    <div className={styles.articleView}>
       {articles.map((metadata) => <ArticleCard metadata={metadata}/>)}
     </div>
   );

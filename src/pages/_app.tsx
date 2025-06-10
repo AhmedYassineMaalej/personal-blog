@@ -1,6 +1,4 @@
 import "@/styles/globals.css";
-import '@/styles/navbar.css';
-import '@/styles/searchbar.css';
 
 import type { AppProps } from "next/app";
 

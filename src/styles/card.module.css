@@ -5,11 +5,11 @@
 .card {
   z-index: 0;
   transition: 0.25s;
-  margin: 1em;
-  padding: 1em 1em 1em 1em;
+  margin: 1.5em 1em 1.5em 1em;
+  padding: 1em;
   border-radius: 2em;
   background-image: linear-gradient(135deg, #800080, #008080);
-  width: min(100%, 40em);
+  width: min(90%, 40em);
 }
 
 .card:hover {
