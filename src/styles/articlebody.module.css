@@ -19,6 +19,7 @@ p.paragraph {
   width: 100%;
   text-indent: 2em;
   padding-bottom: 2em;
+  text-wrap: pretty;
 }
 
 img.diagram {
@@ -57,6 +58,7 @@ img.diagram {
 }
 
 .codeBlockContainer {
+  overflow-x: auto;
   padding: 0.5em;
   border-radius: 0.5em;
 }
@@ -100,4 +102,3 @@ img.diagram {
   border-radius: 0.2em;
   padding: 0.2em;
 }
-

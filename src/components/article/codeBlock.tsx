@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/github-dark-dimmed.css";
 import rust from "highlight.js/lib/languages/rust";
+// import markdown from "highlight.js/lib/languages/markdown"
+// hljs.registerLanguage("md", markdown);
 hljs.registerLanguage("rust", rust);
 
 import { Fira_Code } from "next/font/google";

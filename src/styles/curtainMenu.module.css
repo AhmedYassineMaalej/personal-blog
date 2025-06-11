@@ -11,11 +11,11 @@
 }
 
 .curtainMenu.visible {
-  max-height: 30vh; 
+  height: 100vh;
 }
 
 .curtainMenu.invisible {
-  max-height: 0;
+  height: 0;
 }
 
 @media screen and (width <= 480px) {

@@ -1,6 +1,7 @@
 div.tags {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 p.tag {
@@ -10,4 +11,10 @@ p.tag {
     border-radius: 1em;
     padding: 0.5em;
     cursor: pointer;
+}
+
+@media screen and (width <= 480px) {
+  .tags {
+    grid-column:  1 / -1;
+  }
 }

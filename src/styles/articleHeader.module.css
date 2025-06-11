@@ -1,24 +1,37 @@
 .articleHeader {
   width: min(100%, 60em);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+}
+
+@media screen and (width <= 480px) {
+  .articleHeader {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (width > 480px) {
+  .articleHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .readtime {
-    font-size: 1.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-weight: 100;
+  font-size: 1.5em;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  font-weight: 100;
 }
 
-
 .dateContainer {
-    margin-left: auto;
-    margin-right: 1em;
+  margin-left: auto;
+  margin-top: 1vh;
+  margin-right: 1vw;
 }
 
 .date {
-    font-size: 1.5em;
-    font-weight: 100;
+  font-size: 1.5em;
+  font-weight: 100;
 }
