@@ -134,7 +134,8 @@
       {
         "type": "Codeblock",
         "language": "rust",
-        "code": "fn main() {\n    println!(\"hello world\");\n}\n"
+        "code": "fn main() {\n    println!(\"hello world\");\n}\n",
+        "file": "src/main.rs"
       },
       {
         "type": "Paragraph",

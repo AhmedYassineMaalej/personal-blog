@@ -3,3 +3,7 @@
   flex-direction: column;
   width: min(100%, 50em);
 }
+
+.skillsContainer {
+  margin-bottom: 5vh;
+}

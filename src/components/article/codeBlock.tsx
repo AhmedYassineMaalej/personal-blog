@@ -72,7 +72,7 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
 function CodeSnippetFooter({ text }: { text: string }) {
   return (
     <div className={styles.codeSnippetFooter}>
-      <p>article.md</p>
+      <p>{text}</p>
     </div>
   );
 }

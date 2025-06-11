@@ -119,7 +119,7 @@ interface titleProps {
   text: string;
 }
 
-function Title({ text }: titleProps) {
+export function Title({ text }: titleProps) {
   const [isVisible, ref] = useIsVisible();
   const visibilityClass = isVisible ? styles.visible : styles.invisible;
 
