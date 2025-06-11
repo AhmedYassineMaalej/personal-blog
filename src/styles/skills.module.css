@@ -1,9 +1,9 @@
 .skills {
   display: flex;
   flex-direction: column;
-  width: min(100%, 50em);
 }
 
 .skillsContainer {
+  width: min(100%, 50em);
   margin-bottom: 5vh;
 }
