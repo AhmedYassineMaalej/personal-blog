@@ -18,7 +18,11 @@ export function useIsVisible() {
     });
 
     observer.observe(ref.current);
-    return () => observer.unobserve(ref.current);
+    return () => {
+      if (ref.current !== null) {
+        observer.unobserve(ref.current);
+      }
+    };
   }, []);
 
   return [isVisible, ref];

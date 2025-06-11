@@ -1,13 +1,20 @@
 import styles from "@/styles/curtainMenu.module.css";
+import Link from "next/link";
 
-export default function CurtainMenu({ isVisible }: { isVisible: boolean }) {
+interface curtainMenuParams {
+  isVisible: any;
+  curtainVisibilitySetter: any;
+}
+
+export default function CurtainMenu({ isVisible, curtainVisibilitySetter }: curtainMenuParams) {
   const visibilityClass = isVisible ? styles.visible : styles.invisible;
+  const closeCurtain = () => curtainVisibilitySetter(false);
 
   return (
     <div className={`${styles.curtainMenu} ${visibilityClass}`}>
-      <CurtainMenuButton text="Home" url="/home" />
-      <CurtainMenuButton text="Articles" url="/articles/1" />
-      <CurtainMenuButton text="About me" url="/about-me" />
+      <CurtainMenuButton text="Home" url="/home" onClick={closeCurtain}/>
+      <CurtainMenuButton text="Articles" url="/articles/1" onClick={closeCurtain}/>
+      <CurtainMenuButton text="About me" url="/about-me" onClick={closeCurtain}/>
     </div>
   );
 }
@@ -15,14 +22,17 @@ export default function CurtainMenu({ isVisible }: { isVisible: boolean }) {
 interface curtainMenuButtonProps {
   text: string;
   url: string;
+  onClick: any;
 }
 
-function CurtainMenuButton({ text, url }: curtainMenuButtonProps) {
-  const openUrl = () => window.open(url, "_self");
-
+function CurtainMenuButton({ text, url, onClick }: curtainMenuButtonProps) {
   return (
-    <button className={styles.curtainButton} onClick={openUrl}>
+    <Link
+      className={styles.curtainButton}
+      href={url}
+      onClick={onClick}
+    >
       {text}
-    </button>
+    </Link>
   );
 }
