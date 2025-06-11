@@ -37,16 +37,6 @@ img.diagram {
   margin-bottom: 2em;
 }
 
-.codeCopyButton {
-  font-size: 1em;
-  padding: 0.25em;
-  background-color: black;
-  border-radius: 0.5em;
-  cursor: pointer;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
 .codeSnippetFooter {
   height: fit-content;
   text-align: right;
@@ -72,16 +62,17 @@ img.diagram {
   padding: 0.5em;
   border-radius: 0.5em;
   cursor: pointer;
-  width: 3em;
+  width: 4em;
   z-index: 1;
+  text-align: center;
 }
 
 .copyButton:hover {
-  width: 4em;
+  width: 5em;
 }
 
 .copyButton.clicked {
-  width: 4em;
+  width: 5em;
 }
 
 .codeBlock {
