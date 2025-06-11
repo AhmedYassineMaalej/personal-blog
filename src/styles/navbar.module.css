@@ -10,14 +10,14 @@
   padding: 0.5em;
   background: #56006e;
   top: 0px;
-  height: 10%;
+  height: 10vh;
 }
 
 .navbar.invisible {
   top: -100px;
 }
 
-.navbar > button {
+.navbarButton {
   transition: 0.2s;
   background-color: #56006e;
   padding: 1em;
@@ -39,7 +39,7 @@
   scale: 105%;
 }
 
-.navbar > button:hover {
+.navbarButton:hover {
   background-color: #60017b;
 }
 

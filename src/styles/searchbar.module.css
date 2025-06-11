@@ -1,4 +1,5 @@
 input.searchBar {
+    z-index: 2;
     background-color: #190020;
     cursor: text;
     height: 3em;

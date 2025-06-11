@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import SearchBar from "./searchbar";
 import styles from "@/styles/navbar.module.css";
+import MenuButton from "./menuButton";
+import CurtainMenu from "./curtainMenu";
 
 export default function Navbar() {
   let [isVisible, setVisible] = useState(true);
   let [scrollPos, setScrollPos] = useState(0);
+  let [curtainMenuVisible, setCurtainMenuVisible] = useState(false);
+
   let visibilityClass = "";
   if (!isVisible) {
     visibilityClass = styles.invisible;
@@ -14,7 +18,7 @@ export default function Navbar() {
     const handleScroll = () => {
       let currScrollPos = window.pageYOffset;
 
-      if (currScrollPos > scrollPos) {
+      if (currScrollPos > scrollPos && !curtainMenuVisible) {
         setVisible(false);
       } else {
         setVisible(true);
@@ -32,6 +36,8 @@ export default function Navbar() {
       className={`${styles.navbar} ${visibilityClass}`}
       style={{ top: isVisible.toString() + "px" }}
     >
+      <MenuButton onClick={() => setCurtainMenuVisible((visible) => !visible)}/>
+      <CurtainMenu isVisible={curtainMenuVisible}/>
       <NavbarButton text="Home" url="/home" />
       <NavbarButton text="Articles" url="/home" />
       <SearchBar visibilitySetter={setVisible} />

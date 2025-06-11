@@ -1,0 +1,47 @@
+.curtainMenu {
+  flex-direction: column;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background-color: #56006e;
+  top: calc(10vh - 2px);
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  transform-origin: top;
+}
+
+.curtainMenu.visible {
+  max-height: 30vh; 
+}
+
+.curtainMenu.invisible {
+  max-height: 0;
+}
+
+@media screen and (width <= 480px) {
+  .curtainMenu {
+    display: flex;
+  }
+}
+
+@media screen and (width >= 480px) {
+  .curtainMenu {
+    display: none;
+  }
+}
+
+.curtainButton:first-child {
+  border-top: solid #2e003a;
+}
+
+.curtainButton {
+  border-bottom: solid #2e003a;
+  position: relative;
+  padding: 8px;
+  font-size: 1.5em;
+}
+
+.curtainMenu > hr {
+  border-top-width: 2px;
+  border-top-color: #2e003a;
+}
