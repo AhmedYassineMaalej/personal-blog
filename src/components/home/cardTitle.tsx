@@ -8,6 +8,6 @@ interface params {
 export default function CardTitle({ text }: params) {
 
     return (
-        <Link className={styles.title} href="/articles/1">{text}</Link>
+        <a className={styles.title} href="/articles/1">{text}</a>
     )
 }
