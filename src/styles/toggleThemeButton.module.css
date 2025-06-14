@@ -1,0 +1,9 @@
+.toggleThemeButton {
+    height: 100%;
+    cursor: pointer;
+    padding: 0.25em;
+}
+
+.toggleThemeButton > img {
+    height: 100%;
+}

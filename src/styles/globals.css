@@ -1,8 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-color1: black;
+  --bg-color2: #360045;
+  --inline-code-color: darkviolet;
+  --inline-code-bg-color: #22272e;
+  --text-color: white;
+  --tag-bg-color: purple;
+  --card-color1: #800080;
+  --card-color2: #008080;
+  --curtain-menu-bg-color: #56006e;
+  --curtain-menu-hr-color: #2e003a;
+  --footer-bg-color: rgb(24, 0, 24);
+  --navbar-bg-color: #56006e;
+  --navbar-button-hover-color: #60017b;
+  --searchbar-bg-color: #190020;
+  --link-color: darkviolet;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+.lightmode {
+  --bg-color1: white;
+  --bg-color2: rgb(255, 185, 134);
+  --inline-code-color: darkorange;
+  --inline-code-bg-color: #22272e;
+  --text-color: black;
+  --tag-bg-color: darkorange;
+  --card-color1: rgb(253, 134, 91);
+  --card-color2: rgb(255, 184, 51);
+  --curtain-menu-bg-color: orange;
+  --curtain-menu-hr-color: rgb(163, 90, 0);
+  --footer-bg-color: rgb(220, 220, 220);
+  --navbar-bg-color: orange;
+  --navbar-button-hover-color: rgb(253, 184, 57);
+  --searchbar-bg-color: rgb(255, 190, 110);
+  --link-color: rgb(255, 111, 0);
+  --card-tag-bg-color: rgb(255, 128, 0);
+  --background: #ededed;
+  --foreground: #0a0a0a;
 }
 
 @theme inline {
@@ -12,10 +48,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
 

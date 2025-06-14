@@ -1,6 +1,6 @@
 input.searchBar {
     z-index: 2;
-    background-color: #190020;
+    background-color: var(--searchbar-bg-color);
     cursor: text;
     height: 3em;
     width: min(60%, 20em);

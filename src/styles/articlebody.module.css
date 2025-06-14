@@ -35,6 +35,7 @@ img.diagram {
   border-radius: 0.5em;
   background-color: #22272e;
   margin-bottom: 2em;
+  color: rgb(237, 237, 237);
 }
 
 .codeSnippetFooter {
@@ -84,12 +85,12 @@ img.diagram {
 
 .link {
   text-decoration: underline;
-  color: darkviolet;
+  color: var(--link-color);
 }
 
 .inlineCode {
-  background-color: #22272e;
-  color: darkviolet;
+  background-color: var(--inline-code-bg-color);
+  color: var(--inline-code-color);
   border-radius: 0.2em;
   padding: 0.2em;
 }

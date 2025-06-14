@@ -1,6 +1,6 @@
 .footer {
     height: 200px;
-    background-color:rgb(24, 0, 24);
+    background-color: var(--footer-bg-color);
     padding: 1em;
     align-content: center;
 }

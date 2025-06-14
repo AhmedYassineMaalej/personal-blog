@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import SearchBar from "./searchbar";
 import styles from "@/styles/navbar.module.css";
 import MenuButton from "./menuButton";
 import CurtainMenu from "./curtainMenu";
 import Link from "next/link";
+import ToggleThemeButton from "./toggleThemeButton";
 
 export default function Navbar() {
   let [isVisible, setVisible] = useState(true);
@@ -37,11 +38,17 @@ export default function Navbar() {
       className={`${styles.navbar} ${visibilityClass}`}
       style={{ top: isVisible.toString() + "px" }}
     >
-      <MenuButton onClick={() => setCurtainMenuVisible((visible) => !visible)}/>
-      <CurtainMenu isVisible={curtainMenuVisible} curtainVisibilitySetter={setCurtainMenuVisible}/>
+      <MenuButton
+        onClick={() => setCurtainMenuVisible((visible) => !visible)}
+      />
+      <CurtainMenu
+        isVisible={curtainMenuVisible}
+        curtainVisibilitySetter={setCurtainMenuVisible}
+      />
       <NavbarButton text="Home" url="/home" />
       <NavbarButton text="Articles" url="/home" />
       <SearchBar visibilitySetter={setVisible} />
+      <ToggleThemeButton  />
       <NavbarButton text="About me" url="/about-me" />
     </div>
   );
@@ -54,10 +61,7 @@ interface navbarButtonParams {
 
 function NavbarButton({ url, text }: navbarButtonParams) {
   return (
-    <Link
-      className={styles.navbarButton}
-      href={url}
-    >
+    <Link className={styles.navbarButton} href={url}>
       {text}
     </Link>
   );

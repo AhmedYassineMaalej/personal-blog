@@ -5,7 +5,7 @@ div.tags {
 }
 
 p.tag {
-    background-color: purple;
+    background-color: var(--tag-bg-color);
     margin: 0.5em;
     font-size: 1.2em;
     border-radius: 1em;

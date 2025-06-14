@@ -3,7 +3,7 @@
   z-index: 1;
   position: fixed;
   width: 100%;
-  background-color: #56006e;
+  background-color: var(--navbar-bg-color);
   top: calc(10vh - 2px);
   transition: 0.3s ease-in-out;
   overflow: hidden;
@@ -31,17 +31,13 @@
 }
 
 .curtainButton:first-child {
-  border-top: solid #2e003a;
+  border-top: solid var(--curtain-menu-hr-color);
 }
 
 .curtainButton {
-  border-bottom: solid #2e003a;
+  border-bottom: solid var(--curtain-menu-hr-color);
   position: relative;
   padding: 8px;
   font-size: 1.5em;
 }
 
-.curtainMenu > hr {
-  border-top-width: 2px;
-  border-top-color: #2e003a;
-}
