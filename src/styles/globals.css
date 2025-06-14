@@ -16,6 +16,7 @@
   --navbar-button-hover-color: #60017b;
   --searchbar-bg-color: #190020;
   --link-color: darkviolet;
+  --card-tag-bg-color: rgb(0, 0, 0, 0.3);
   --background: #0a0a0a;
   --foreground: #ededed;
 }
@@ -27,8 +28,8 @@
   --inline-code-bg-color: #22272e;
   --text-color: black;
   --tag-bg-color: darkorange;
-  --card-color1: rgb(253, 134, 91);
-  --card-color2: rgb(255, 184, 51);
+  --card-color1: rgb(255, 165, 0);
+  --card-color2: hotpink;
   --curtain-menu-bg-color: orange;
   --curtain-menu-hr-color: rgb(163, 90, 0);
   --footer-bg-color: rgb(220, 220, 220);
@@ -36,7 +37,7 @@
   --navbar-button-hover-color: rgb(253, 184, 57);
   --searchbar-bg-color: rgb(255, 190, 110);
   --link-color: rgb(255, 111, 0);
-  --card-tag-bg-color: rgb(255, 128, 0);
+  --card-tag-bg-color: rgb(255, 255, 255, 0.3);
   --background: #ededed;
   --foreground: #0a0a0a;
 }
@@ -56,7 +57,5 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: signika, Helvetica, sans-serif;
 }

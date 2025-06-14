@@ -13,8 +13,8 @@
 	</g>
     <defs>
         <linearGradient id="purple_teal_linear" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse" transform-origin="center" gradientTransform="rotate(-90)">
-        <stop stop-color="rgb(253, 134, 91)"/>
-        <stop offset="1" stop-color="rgb(255, 184, 51)"/>
+        <stop stop-color="hotpink"/>
+        <stop offset="1" stop-color="darkorange"/>
         </linearGradient>
     </defs>
 </svg>

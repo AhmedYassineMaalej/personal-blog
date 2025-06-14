@@ -3,21 +3,11 @@ import { useContext } from "react";
 import { ThemeContext } from "./layout";
 
 export default function ToggleThemeButton() {
-  const setDark = useContext(ThemeContext).setDark;
-
+  const contextData = useContext(ThemeContext);
   const toggleTheme = () => {
-    const body = document.querySelector("body");
-    if (body === null) {
-      return;
-    }
-
-    if (body.classList.contains("lightmode")) {
-      body.classList.remove("lightmode");
-      setDark(true);
-      console.log("set dark to true");
-    } else {
-      body.classList.add("lightmode");
-      setDark(false);
+    if (contextData !== null) {
+      const setDark = contextData.setDark;
+      setDark((value) => !value);
     }
   };
 
