@@ -6,4 +6,5 @@
 
 .toggleThemeButton > img {
     height: 100%;
+    filter: var(--theme-toggle-button-filter);
 }
