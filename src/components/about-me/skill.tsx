@@ -13,7 +13,14 @@ export default function Skill({ icon, text, index }: params) {
   const directionClass = index % 2 == 0 ? "" : styles.reverse;
   const [isVisible, ref] = useIsVisible();
   const visibilityClass = isVisible ? styles.visible : styles.invisible;
-  const dark = useContext(ThemeContext).dark;
+
+  let dark;
+  const contextData = useContext(ThemeContext);
+  if (contextData !== null) {
+    dark = contextData.dark;
+  } else {
+    dark = true;
+  }
 
   console.log("dark: " + dark.toString());
 
