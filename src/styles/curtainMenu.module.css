@@ -53,7 +53,7 @@
 }
 
 .curtainButton:first-child {
-  border-top: solid var(--curtain-menu-hr-color);
+  border-top: solid 3px var(--curtain-menu-hr-color);
 }
 
 .curtainButton {
