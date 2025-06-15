@@ -21,7 +21,7 @@ export default function Navbar() {
       let currScrollPos = window.pageYOffset;
 
       if (currScrollPos > scrollPos && !curtainMenuVisible) {
-        setTimeout(() => setVisible(false), 400);
+        setTimeout(() => setVisible(false), 1000);
       } else {
         setVisible(true);
       }
