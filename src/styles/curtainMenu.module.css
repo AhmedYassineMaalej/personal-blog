@@ -11,7 +11,7 @@
 }
 
 .curtainMenu.visible {
-  height: calc(56.8px + 2 * 54.4px - 1px);
+  height: calc(3 * 7vh);
 }
 
 .curtainMenu.invisible {
@@ -53,12 +53,16 @@
 }
 
 .curtainButton:first-child {
-  border-top: solid 3px var(--curtain-menu-hr-color);
+  border-top: solid 0.4vh var(--curtain-menu-hr-color);
 }
 
 .curtainButton {
-  border-bottom: solid var(--curtain-menu-hr-color);
   position: relative;
+  text-align: center;
+  text-justify: center;
+  display: block;
+  height: 7vh;
   padding: 8px;
   font-size: 1.5em;
+  border-bottom: solid 0.4vh var(--curtain-menu-hr-color);
 }
