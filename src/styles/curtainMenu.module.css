@@ -28,12 +28,10 @@
 
 .curtainMenuContainer.visible {
   backdrop-filter: brightness(50%);
-  touch-action: none;
 }
 
 .curtainMenuContainer.invisible {
   backdrop-filter: none;
-  touch-action: auto;
 }
 
 @media screen and (width <= 480px) {

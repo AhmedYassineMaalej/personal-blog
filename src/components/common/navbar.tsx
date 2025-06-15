@@ -21,7 +21,7 @@ export default function Navbar() {
       let currScrollPos = window.pageYOffset;
 
       if (currScrollPos > scrollPos && !curtainMenuVisible) {
-        setVisible(false);
+        setTimeout(() => setVisible(false), 400);
       } else {
         setVisible(true);
       }
@@ -48,7 +48,7 @@ export default function Navbar() {
       <NavbarButton text="Home" url="/home" />
       <NavbarButton text="Articles" url="/home" />
       <SearchBar visibilitySetter={setVisible} />
-      <ToggleThemeButton  />
+      <ToggleThemeButton />
       <NavbarButton text="About me" url="/about-me" />
     </div>
   );

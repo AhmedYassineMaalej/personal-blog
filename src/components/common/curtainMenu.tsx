@@ -15,7 +15,7 @@ export default function CurtainMenu({
   const closeCurtain = () => curtainVisibilitySetter(false);
 
   return (
-    <div className={`${styles.curtainMenuContainer} ${visibilityClass}`}>
+    <div className={`${styles.curtainMenuContainer} ${visibilityClass}`} onTouchStart={() => curtainVisibilitySetter(false)}>
       <div className={`${styles.curtainMenu} ${visibilityClass}`}>
         <CurtainMenuButton text="Home" url="/home" onClick={closeCurtain} />
         <CurtainMenuButton
