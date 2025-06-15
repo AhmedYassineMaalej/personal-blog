@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "./searchbar";
 import styles from "@/styles/navbar.module.css";
 import MenuButton from "./menuButton";

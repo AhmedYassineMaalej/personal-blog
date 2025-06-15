@@ -23,7 +23,7 @@
   top: calc(10vh - 2px);
   width: 100%;
   transition-property: backdrop-filter;
-  transition-duration:  0.2s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
 
@@ -34,7 +34,7 @@
 
 .curtainMenuContainer.invisible {
   backdrop-filter: none;
-  height: 0%;
+  height: 0;
 }
 
 @media screen and (width <= 480px) {
