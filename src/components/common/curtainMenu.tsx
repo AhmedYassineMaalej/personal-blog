@@ -15,18 +15,20 @@ export default function CurtainMenu({
   const closeCurtain = () => curtainVisibilitySetter(false);
 
   return (
-    <div className={`${styles.curtainMenu} ${visibilityClass}`}>
-      <CurtainMenuButton text="Home" url="/home" onClick={closeCurtain} />
-      <CurtainMenuButton
-        text="Articles"
-        url="/articles/1"
-        onClick={closeCurtain}
-      />
-      <CurtainMenuButton
-        text="About me"
-        url="/about-me"
-        onClick={closeCurtain}
-      />
+    <div className={`${styles.curtainMenuContainer} ${visibilityClass}`}>
+      <div className={`${styles.curtainMenu} ${visibilityClass}`}>
+        <CurtainMenuButton text="Home" url="/home" onClick={closeCurtain} />
+        <CurtainMenuButton
+          text="Articles"
+          url="/articles/1"
+          onClick={closeCurtain}
+        />
+        <CurtainMenuButton
+          text="About me"
+          url="/about-me"
+          onClick={closeCurtain}
+        />
+      </div>
     </div>
   );
 }

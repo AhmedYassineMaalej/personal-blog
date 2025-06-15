@@ -1,21 +1,39 @@
 .curtainMenu {
   flex-direction: column;
   z-index: 1;
-  position: fixed;
+  position: relative;
   width: 100%;
   background-color: var(--navbar-bg-color);
-  top: calc(10vh - 2px);
+  top: 0;
   transition: 0.2s;
   overflow: hidden;
   transform-origin: top;
 }
 
 .curtainMenu.visible {
-  height: 100vh;
+  height: calc(56.8px + 2 * 54.4px - 1px);
 }
 
 .curtainMenu.invisible {
   height: 0;
+}
+
+.curtainMenuContainer {
+  position: fixed;
+  top: calc(10vh - 2px);
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+}
+
+.curtainMenuContainer.visible {
+  backdrop-filter: brightness(50%);
+  touch-action: none;
+}
+
+.curtainMenuContainer.invisible {
+  backdrop-filter: none;
+  touch-action: auto;
 }
 
 @media screen and (width <= 480px) {
@@ -26,6 +44,10 @@
 
 @media screen and (width >= 480px) {
   .curtainMenu {
+    display: none;
+  }
+
+  .curtainMenuContainer {
     display: none;
   }
 }

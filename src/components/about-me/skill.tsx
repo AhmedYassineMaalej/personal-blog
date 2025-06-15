@@ -22,8 +22,6 @@ export default function Skill({ icon, text, index }: params) {
     dark = true;
   }
 
-  console.log("dark: " + dark.toString());
-
   if (!dark) {
     icon = icon.replace(".svg", "_light.svg");
   }
